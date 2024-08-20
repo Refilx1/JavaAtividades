@@ -18,6 +18,8 @@ public class Main {
         } catch (IllegalStateException e) {
             System.out.println(e.getMessage());
         }
+        
+        fila.print(); // Deve mostrar: Elemento no início: 
 
         // Remover elementos da fila
         System.out.println("Dequeue: " + fila.dequeue()); // Deve mostrar: Dequeue: A
@@ -28,5 +30,8 @@ public class Main {
         fila.enqueue("G"); // Adicionar mais um elemento
         System.out.println("Elemento no início: " + fila.peek()); // Deve mostrar: Elemento no início: C
         System.out.println("Tamanho da fila: " + fila.size()); // Deve mostrar: Tamanho da fila: 5
+
+        fila.clear();
+        System.out.println("Tamanho da fila após limpar: " + fila.size()); // Deve mostrar: Tamanho da fila após limpar: 0
     }
 }
