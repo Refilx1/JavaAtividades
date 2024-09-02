@@ -11,7 +11,7 @@ public class CircularQueue<T> {
     public CircularQueue(int capacidade) {
         this.capacidade = capacidade;
         this.array = (T[]) new Object[capacidade];
-        this.inicio = -1; // Inicializa inicio com -1
+        this.inicio = -1; 
         this.fim = 0;
         this.tamanho = 0;
     }
@@ -36,7 +36,7 @@ public class CircularQueue<T> {
             throw new IllegalStateException("A fila está cheia");
         }
         if (isEmpty()) {
-            inicio = 0; // Ajusta inicio quando o primeiro elemento é adicionado
+            inicio = 0; 
         }
         array[fim] = elemento;
         fim = move(fim);
@@ -48,9 +48,9 @@ public class CircularQueue<T> {
             throw new IllegalStateException("A fila está vazia");
         }
         T elemento = array[inicio];
-        array[inicio] = null; // Para evitar vazamento de memória
+        array[inicio] = null; 
         if (tamanho == 1) {
-            inicio = -1; // Ajusta inicio quando a fila fica vazia
+            inicio = -1; 
         } else {
             inicio = move(inicio);
         }
@@ -71,11 +71,11 @@ public class CircularQueue<T> {
 
     public void clear() {
         for (int i = 0; i < capacidade; i++) {
-            array[i] = null; // Limpa todos os elementos
+            array[i] = null; 
         }
-        inicio = -1; // Reseta inicio
-        fim = 0; // Reseta fim
-        tamanho = 0; // Reseta tamanho
+        inicio = -1; 
+        fim = 0; 
+        tamanho = 0; 
     }
 
     private int move(int position) {
